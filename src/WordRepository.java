@@ -6,7 +6,7 @@ import java.util.Map;
 public class WordRepository {
     public WordRepository() throws IOException {
         Map<String, String> wordList = new HashMap<String, String>();
-        File wordFile = new File("D:\\VocaList\\testword.txt");
+        File wordFile = new File("D:\\VocaListProject\\testword1.txt");
         BufferedReader br = new BufferedReader(new FileReader(wordFile));
         String str = br.readLine();
         while(str != null){ // 읽어오는 문자열이 null이 나올때까지 루프
