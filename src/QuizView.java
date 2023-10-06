@@ -6,10 +6,12 @@ import java.util.Map;
 
 public class QuizView {
     private final UtilTool utilTool;
-//    private final WordRepository.wordList ;
+    private final WordRepository wr;
 
     public QuizView() throws IOException {
         this.utilTool = new UtilTool();
+        this.wr=new WordRepository();
+        Map<String, String> wordList = wr.wordList;
         viewProcess();
 
     }
@@ -28,7 +30,7 @@ public class QuizView {
 
             switch (menuNum) {
                 case "1":
-                    new MutiQuizView(wordList);
+                    new MutiQuizView(wr.wordList);
                     break;
                 case "2":
                     break;
