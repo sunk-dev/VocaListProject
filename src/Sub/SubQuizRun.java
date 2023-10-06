@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 //package Sub;
 //
 //import java.util.InputMismatchException;
@@ -104,3 +105,15 @@
 //        System.out.println("==========================");
 //    }//showResult()---------
 //}
+=======
+package Sub;
+
+import org.w3c.dom.ls.LSOutput;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class SubQuizRun {
+   
+}
+>>>>>>> Stashed changes
