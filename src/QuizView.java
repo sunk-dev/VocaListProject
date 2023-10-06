@@ -11,7 +11,6 @@ public class QuizView {
     public QuizView() throws IOException {
         this.utilTool = new UtilTool();
         this.wr=new WordRepository();
-        Map<String, String> wordList = wr.wordList;
         viewProcess();
 
     }
@@ -30,7 +29,7 @@ public class QuizView {
 
             switch (menuNum) {
                 case "1":
-                    new MutiQuizView(wr.wordList);
+                    new MutiQuizView(wr.word,wr.wordMeaning);
                     break;
                 case "2":
                     break;
