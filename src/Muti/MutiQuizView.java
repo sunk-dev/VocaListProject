@@ -19,7 +19,7 @@ public class MutiQuizView{
     }
     void QuizView(){
         System.out.println("-----------------------------------------");
-        mp.PickAnswer(copyWord.size());
+        mp.mainProgress(copyWord,copyWordMeaning);
         System.out.println("------------------------------------------");
     }
 

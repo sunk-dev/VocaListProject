@@ -1,15 +1,15 @@
 import Muti.MutiQuizView;
+import Muti.tools;
 
 import java.io.IOException;
-import java.util.Map;
 
 
 public class QuizView {
-    private final UtilTool utilTool;
+    private final tools utilTool;
     private final WordRepository wr;
 
     public QuizView() throws IOException {
-        this.utilTool = new UtilTool();
+        this.utilTool = new tools();
         this.wr=new WordRepository();
         viewProcess();
 

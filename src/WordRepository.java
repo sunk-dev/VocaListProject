@@ -14,7 +14,7 @@ public class WordRepository {
 //        this.wordList = new HashMap<String, String>();
         this.word = new ArrayList<>();
         this.wordMeaning = new ArrayList<>();
-        File wordFile = new File("D:\\VocaListProject\\testword1.txt");
+        File wordFile = new File("C:\\Users\\jskre\\VocaListProject\\testword1.txt");
         BufferedReader br = new BufferedReader(new FileReader(wordFile));
         String str = br.readLine();
         while(str != null){ // 읽어오는 문자열이 null이 나올때까지 루프

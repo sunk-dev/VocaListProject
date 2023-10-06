@@ -1,7 +1,10 @@
+package Muti;
+
 import java.util.Scanner;
 
-public class UtilTool {
-
+public class tools {
+    public tools() {
+    }
 
     public String input(String message) {
         Scanner sc= new Scanner(System.in);
