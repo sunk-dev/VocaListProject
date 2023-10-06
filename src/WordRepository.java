@@ -4,8 +4,11 @@ import java.util.Map;
 
 
 public class WordRepository {
+
+    public static Map<String, String> wordList;
+
     public WordRepository() throws IOException {
-        Map<String, String> wordList = new HashMap<String, String>();
+        this.wordList = new HashMap<String, String>();
         File wordFile = new File("D:\\VocaListProject\\testword1.txt");
         BufferedReader br = new BufferedReader(new FileReader(wordFile));
         String str = br.readLine();
@@ -14,5 +17,6 @@ public class WordRepository {
             wordList.put(word[0],word[1]);
             str = br.readLine(); // 메모장 다음 문자열 읽기
         }
+
     }
 }

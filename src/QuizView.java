@@ -1,13 +1,15 @@
+import Muti.MutiQuizView;
+
 import java.io.IOException;
+import java.util.Map;
 
 
 public class QuizView {
     private final UtilTool utilTool;
-    private final WordRepository wr;
+//    private final WordRepository.wordList ;
 
     public QuizView() throws IOException {
         this.utilTool = new UtilTool();
-        this.wr=new WordRepository();
         viewProcess();
 
     }
@@ -22,7 +24,15 @@ public class QuizView {
     void viewProcess() {
         while (true) {
             mainView();
-//            String menuNum = utilTool.input(">>");
+            String menuNum = utilTool.input(">>");
+
+            switch (menuNum) {
+                case "1":
+                    new MutiQuizView(wordList);
+                    break;
+                case "2":
+                    break;
+            }
         }
     }
 }
