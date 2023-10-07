@@ -1,12 +1,11 @@
-<<<<<<< Updated upstream
-import muti.MutiQuizView;
-import muti.tools;
+
 import word.WordRepository;
-=======
+
 import Muti.MutiQuizView;
 import Muti.tools;
-import Sub.SubQuizRun;
->>>>>>> Stashed changes
+import sub.*;
+
+
 
 import java.io.IOException;
 
