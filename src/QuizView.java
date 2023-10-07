@@ -1,6 +1,12 @@
+<<<<<<< Updated upstream
 import muti.MutiQuizView;
 import muti.tools;
 import word.WordRepository;
+=======
+import Muti.MutiQuizView;
+import Muti.tools;
+import Sub.SubQuizRun;
+>>>>>>> Stashed changes
 
 import java.io.IOException;
 
@@ -33,6 +39,7 @@ public class QuizView {
                     new MutiQuizView(wr);
                     break;
                 case "2":
+                    new SubQuizRun(wr.word,wr.wordMeaning);
                     break;
             }
         }

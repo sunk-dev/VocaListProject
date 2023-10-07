@@ -16,6 +16,7 @@ public class WordRepository {
     public WordRepository() {
         this.word = new ArrayList<>();
         this.wordMeaning = new ArrayList<>();
+<<<<<<< Updated upstream:src/word/WordRepository.java
         File wordFile = new File("D:\\VocaListProject\\testword1.txt");
 
 
@@ -30,6 +31,16 @@ public class WordRepository {
             }
         } catch (IOException e) {
             e.printStackTrace();
+=======
+        File wordFile = new File("C:\\Users\\cyci\\Desktop\\Git\\VocaListProject\\testword1.txt");
+        BufferedReader br = new BufferedReader(new FileReader(wordFile));
+        String str = br.readLine();
+        while(str != null){ // 읽어오는 문자열이 null이 나올때까지 루프
+            String[]words=str.split("/");
+            word.add(words[0]);
+            wordMeaning.add(words[1]);
+            str = br.readLine(); // 메모장 다음 문자열 읽기
+>>>>>>> Stashed changes:src/WordRepository.java
         }
 
 

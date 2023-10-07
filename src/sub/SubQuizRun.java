@@ -1,37 +1,47 @@
 package sub;
 
-
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 public class SubQuizRun {
+    private ArrayList<String> wordList;
+    private ArrayList<String> wordMeaning;
+    private Random random;
+    private Scanner scanner;
 
-    int result = 0;
-    int TotalQuiz = 5;
-    Scanner sc = new Scanner(System.in);
+    public SubQuizRun(ArrayList<String> wordList, ArrayList<String> wordMeaning) {
+        this.wordList = wordList;
+        this.wordMeaning = wordMeaning;
+        this.random = new Random();
+        this.scanner = new Scanner(System.in);
+        runQuiz();
+    }
 
-    String a = null;
+    public void runQuiz() {
+        int totalQuestions = 5;  // 주관식 문제 5개 선택
 
-    public SubQuizRun(ArrayList<String> word) {
+        System.out.println("주관식 퀴즈를 시작합니다.");
+        for (int i = 0; i < totalQuestions; i++) {
+            int randomIndex = random.nextInt(wordList.size());
+            String question = wordList.get(randomIndex);
+            String correctAnswer = wordMeaning.get(randomIndex);
 
+            System.out.println("문제 " + (i + 1) + ":");
+            System.out.println("단어 '" + question + "'의 뜻은 무엇일까요?");
 
-        for (int i = 0; i < TotalQuiz; i++) {
-//            Question q =
+            System.out.print("정답을 입력하세요: ");
+            String userAnswer = scanner.nextLine();
+
+            if (userAnswer.equalsIgnoreCase(correctAnswer)) {
+                System.out.println("정답입니다!");
+            } else {
+                System.out.println("틀렸습니다. 정답은 '" + correctAnswer + "' 입니다.");
+            }
         }
     }
-
-
-//        do {
-//            if (a != null) {
-//                System.out.println("오답입니다.");
-//            }
-//            System.out.print("대한민국의 수도는?");
-//            a = sc.next();
-//        } while (!a.equals("서울") && !a.equalsIgnoreCase("seoul"));
-//
-//        System.out.println("정답입니다.");
-    }
-
+}
 
 
 
