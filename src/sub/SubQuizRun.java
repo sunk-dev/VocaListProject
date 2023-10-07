@@ -1,6 +1,5 @@
 package sub;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
@@ -10,12 +9,14 @@ public class SubQuizRun {
     private ArrayList<String> wordMeaning;
     private Random random;
     private Scanner scanner;
+    private ArrayList<Integer> selectedIndices;  // 이미 선택한 문제의 인덱스를 저장
 
     public SubQuizRun(ArrayList<String> wordList, ArrayList<String> wordMeaning) {
         this.wordList = wordList;
         this.wordMeaning = wordMeaning;
         this.random = new Random();
         this.scanner = new Scanner(System.in);
+        this.selectedIndices = new ArrayList<>();
         runQuiz();
     }
 
@@ -24,7 +25,13 @@ public class SubQuizRun {
 
         System.out.println("주관식 퀴즈를 시작합니다.");
         for (int i = 0; i < totalQuestions; i++) {
-            int randomIndex = random.nextInt(wordList.size());
+            int randomIndex;
+            do {
+                randomIndex = random.nextInt(wordList.size());
+            } while (selectedIndices.contains(randomIndex));  // 중복된 문제 방지
+
+            selectedIndices.add(randomIndex);  // 선택한 문제의 인덱스 저장
+
             String question = wordList.get(randomIndex);
             String correctAnswer = wordMeaning.get(randomIndex);
 
@@ -42,7 +49,3 @@ public class SubQuizRun {
         }
     }
 }
-
-
-
-

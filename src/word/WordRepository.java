@@ -16,7 +16,7 @@ public class WordRepository {
     public WordRepository() {
         this.word = new ArrayList<>();
         this.wordMeaning = new ArrayList<>();
-        File wordFile = new File("D:\\VocaListProject\\testword1.txt");
+        File wordFile = new File("C:\\Users\\cyci\\Desktop\\Git\\VocaListProject\\testword1.txt");
 
         try {
             BufferedReader br = new BufferedReader(new FileReader(wordFile));
