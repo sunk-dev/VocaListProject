@@ -83,7 +83,7 @@ public class WordRepository {
         ArrayList<String> OptionWordList= new ArrayList<>();
         while(OptionWordList.size()!=3){
             int OptionIndex=r.nextInt(MAXWORDCOUNT);
-            if (OptionIndex!= correctWordIndex){
+            if (OptionIndex!= correctWordIndex && !OptionWordList.contains(wordMeaning.get(OptionIndex))){
                 String optionWordMeaning= wordMeaning.get(OptionIndex);
                 OptionWordList.add(optionWordMeaning);
             }
