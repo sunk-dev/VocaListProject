@@ -1,8 +1,7 @@
 
 import word.WordRepository;
 
-import Muti.MutiQuizView;
-import Muti.tools;
+import muti.*;
 import sub.*;
 
 
