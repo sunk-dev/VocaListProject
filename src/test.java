@@ -1,3 +1,5 @@
+import word.WordRepository;
+
 import java.io.IOException;
 
 
@@ -9,6 +11,6 @@ public class test {
         WordRepository wr=new WordRepository();
         System.out.println(wr.word);
         System.out.println(wr.wordMeaning);
-        System.out.println(wr.MutiProgress());
+        wr.ShowMutiQuiz();
     }
 }

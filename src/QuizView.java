@@ -1,5 +1,6 @@
-import Muti.MutiQuizView;
-import Muti.tools;
+import muti.MutiQuizView;
+import muti.tools;
+import word.WordRepository;
 
 import java.io.IOException;
 
@@ -29,7 +30,7 @@ public class QuizView {
 
             switch (menuNum) {
                 case "1":
-                    new MutiQuizView(wr.word,wr.wordMeaning);
+                    new MutiQuizView(wr);
                     break;
                 case "2":
                     break;
