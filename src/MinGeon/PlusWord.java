@@ -1,8 +1,10 @@
 package MinGeon;
 
+import utility.Utility;
+
 import java.io.*;
 
-import static MinGeon.Utility.input;
+import static utility.Utility.input;
 
 public class PlusWord {
     static final String ROOT_PATH = "D:";

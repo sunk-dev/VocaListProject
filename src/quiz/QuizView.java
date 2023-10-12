@@ -1,5 +1,6 @@
 package quiz;
 
+import utility.Utility;
 import word.WordRepository;
 
 import quiz.muti.*;
@@ -11,11 +12,11 @@ import java.io.IOException;
 
 
 public class QuizView {
-    private final tools utilTool;
+    private final Utility utilTool;
     private final WordRepository wr;
 
     public QuizView() throws IOException {
-        this.utilTool = new tools();
+        this.utilTool = new Utility();
         this.wr=new WordRepository();
         viewProcess();
 

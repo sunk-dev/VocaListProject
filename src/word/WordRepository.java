@@ -3,7 +3,7 @@ package word;
 import java.io.*;
 import java.util.*;
 
-import quiz.muti.tools;
+import utility.Utility;
 
 
 public class WordRepository {
@@ -68,7 +68,7 @@ public class WordRepository {
             System.out.println((i+1)+"번 "+OptionsList.get(i));
             System.out.println();
         }
-        int userAnswerNum= Integer.parseInt(tools.input(">>"));
+        int userAnswerNum= Integer.parseInt(Utility.input(">>"));
         String userAnswer=OptionsList.get(userAnswerNum-1);
         if(correctWordFare.get("meaning").equals(userAnswer)){
             System.out.println("정답입니다!");

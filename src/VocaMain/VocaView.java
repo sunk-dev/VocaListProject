@@ -1,10 +1,8 @@
 package VocaMain;
 
-import static VocaMain.Utility.input;
-import static VocaMain.Utility.makeLine;
 import MinGeon.main;
 import quiz.*;
-
+import utility.Utility;
 
 
 public class VocaView {
@@ -25,9 +23,9 @@ public class VocaView {
             System.out.println("#3. 새로운 단어 추가!🧠");
             System.out.println("#4. Voca 프로그램 종료🙌");
 
-            makeLine();
+            Utility.makeLine();
 
-            String menuNum = input(">>");
+            String menuNum = Utility.input(">>");
 
             switch (menuNum) {
                 case "1":
