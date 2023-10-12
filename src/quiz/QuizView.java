@@ -2,8 +2,8 @@ package quiz;
 
 import word.WordRepository;
 
-import muti.*;
-import sub.*;
+import quiz.muti.*;
+import quiz.sub.*;
 
 
 

@@ -1,7 +1,6 @@
-package muti;
+package quiz.muti;
 
 import word.WordRepository;
-import muti.tools.*;
 
 
 public class MutiQuizView {

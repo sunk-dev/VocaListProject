@@ -3,8 +3,7 @@ package word;
 import java.io.*;
 import java.util.*;
 
-import muti.tools;
-import muti.tools.*;
+import quiz.muti.tools;
 
 
 public class WordRepository {

@@ -1,4 +1,4 @@
-package sub;
+package quiz.sub;
 
 import java.util.ArrayList;
 import java.util.Random;

@@ -1,4 +1,4 @@
-package muti;
+package quiz.muti;
 
 import java.util.Scanner;
 
