@@ -15,7 +15,7 @@ public class WordRepository {
     public WordRepository() {
         this.word = new ArrayList<>();
         this.wordMeaning = new ArrayList<>();
-        File wordFile = new File("C:\\Users\\cyci\\Desktop\\Git\\VocaListProject\\testword1.txt");
+        File wordFile = new File("D:\\VocaListProject\\testword1.txt");
 
         try {
             BufferedReader br = new BufferedReader(new FileReader(wordFile));
@@ -35,26 +35,35 @@ public class WordRepository {
     }
 
     /**
-     * 1개의 객관식 문제를 만들어주는 클래스
-     * @param Word
-     * @param WordMeaning
-     * correctWordFare 단어, 뜻 순서
+     * ShowMutiQuiz()
+     * MAXWORDCOUNT:총 단어 개수
+     * correctWordIndex: 정답 단어 인덱스 저장.
+     * correctWordFare:정답 단어 쌍을 저장해두는 HashMap
+     * OptionsList:정답 단어 와 함께 그 외 보기 저장해두는 리스트
+     * 
      */
 
     public void  ShowMutiQuiz() {
+        
         Random r =new Random();
+        
         int MAXWORDCOUNT=word.size();
         int correctWordIndex=r.nextInt(MAXWORDCOUNT);
-        HashMap<String,String> correctWordFare = new HashMap<>();//new에서 타입 파라미터 생략가능
+        
+        HashMap<String,String> correctWordFare = new HashMap<>();
+        
         correctWordFare.put("word",word.get(correctWordIndex)); //값 추가
         correctWordFare.put("meaning",wordMeaning.get(correctWordIndex));
+        
         ArrayList<String> OptionsList = PickChoices(correctWordIndex, MAXWORDCOUNT);
         OptionsList.add(correctWordFare.get("meaning"));
+        //보기 무작위 섞기
         Collections.shuffle(OptionsList);
 
-        System.out.println("============================================");
-        System.out.println("\t"+correctWordFare.get("word"));
-        System.out.println("=============================================");
+
+        System.out.println("★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆");
+        System.out.println("\t\t"+correctWordFare.get("word"));
+        System.out.println("★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆");
         for (int i = 0; i <OptionsList.size() ; i++) {
             System.out.println((i+1)+"번 "+OptionsList.get(i));
             System.out.println();
