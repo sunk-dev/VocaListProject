@@ -5,6 +5,9 @@ import java.util.Map;
 import static VocaMain.Utility.input;
 import static VocaMain.Utility.makeLine;
 import static VocaMain.VocaFile.*;
+import quiz.*;
+
+
 
 public class VocaView {
 
@@ -19,10 +22,10 @@ public class VocaView {
         while (true){
             System.out.println("\n\n****** 👨‍💻Voca 프로그램👩‍💻 ******");
             System.out.println("#1. 단어장 보기!👀");
-            System.out.println("#2. 객관식 문제 풀기!😊");
-            System.out.println("#3. 주관식 문제 풀기!🙂");
-            System.out.println("#4. 새로운 단어 추가!🧠");
-            System.out.println("#5. Voca 프로그램 종료🙌");
+            System.out.println("#2. 문제 풀기!😊");
+//            System.out.println("#3. 주관식 문제 풀기!🙂"); -- 문제 풀기메뉴 안에서 객관식 주관식 선택하기로 변경했습니다!
+            System.out.println("#3. 새로운 단어 추가!🧠");
+            System.out.println("#4. Voca 프로그램 종료🙌");
 
             makeLine();
 
@@ -34,12 +37,11 @@ public class VocaView {
                     vocaFile.loadFile(); //1번 선택시 txt파일에 있는 단어 불러오기
                     break;
                 case "2":
+                    new Main();
                     break;
                 case "3":
                     break;
                 case "4":
-                    break;
-                case "5":
                     System.out.println("수고하셨습니다!👍");
                     System.exit(0);
                 default:

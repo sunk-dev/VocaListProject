@@ -1,3 +1,5 @@
+package quiz;
+
 import word.WordRepository;
 
 import java.io.IOException;

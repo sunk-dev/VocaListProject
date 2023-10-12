@@ -1,11 +1,15 @@
+package quiz;
+
 import java.io.IOException;
 
 public class Main {
-    public static void main(String[] args)  {
+    public Main() {
         try {
             new QuizView();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
+
 }
