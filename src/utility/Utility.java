@@ -10,7 +10,7 @@ public class Utility {
     }
 
     public static String input(String message){
-        System.out.println(message);
+        System.out.printf(message);
         return sc.nextLine();
     }
 }

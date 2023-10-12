@@ -7,10 +7,10 @@ import java.io.*;
 import static utility.Utility.input;
 
 public class PlusWord {
-    static final String ROOT_PATH = "D:";
+//    static final String ROOT_PATH = "D:";
 
     public PlusWord() {
-        File file = new File(ROOT_PATH + "/plusWord.txt");
+        File file = new File("WordList.txt");
         FileReader fileReader = null;
         String word = "";
         String wordMean = "";

@@ -4,12 +4,13 @@ import java.io.*;
 
 public class VocaFile {
     // txt 파일 생성
-    File file = new File("D:/Voca" + "/Vocabulary.txt");
+    File file = new File("WordList.txt");
 
     public VocaFile() {
         try {
-            if (file.getParentFile().mkdirs() && file.createNewFile()) {
-                System.out.println("파일 생성 성공: " + file.getAbsolutePath());
+            if (file.createNewFile()) {
+                System.out.println("파일 생성 성공");
+                System.out.println("경로 : " + file.getAbsolutePath());
             } else {
                 System.out.println("파일이 이미 있습니다.");
             }

@@ -15,13 +15,13 @@ public class WordRepository {
     public WordRepository() {
         this.word = new ArrayList<>();
         this.wordMeaning = new ArrayList<>();
-        File wordFile = new File("D:\\VocaListProject\\testword1.txt");
+        File wordFile = new File("WordList.txt");
 
         try {
             BufferedReader br = new BufferedReader(new FileReader(wordFile));
             String str = br.readLine();
             while(str != null){ // 읽어오는 문자열이 null이 나올때까지 루프
-                String[]words=str.split("/");
+                String[]words=str.split(" "); // 기존에 /였던 기준을 띄어쓰기로 수정
                 word.add(words[0]);
                 wordMeaning.add(words[1]);
                 str = br.readLine(); // 메모장 다음 문자열 읽기
@@ -47,7 +47,7 @@ public class WordRepository {
         
         Random r =new Random();
         
-        int MAXWORDCOUNT=word.size();
+        final int MAXWORDCOUNT=word.size(); //변하지 않는 함수니 final을 추가함
         int correctWordIndex=r.nextInt(MAXWORDCOUNT);
         
         HashMap<String,String> correctWordFare = new HashMap<>();
