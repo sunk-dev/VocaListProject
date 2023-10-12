@@ -1,6 +1,7 @@
 package MinGeon;
 
 import utility.Utility;
+import word.WordRepository;
 
 import java.io.*;
 
@@ -15,37 +16,37 @@ public class PlusWord {
         String word = "";
         String wordMean = "";
 
-        if(!file.exists()) {
-            try {
-                file.createNewFile();
-            } catch (IOException e) {
-                e.printStackTrace();
-                System.out.println("파일 생성 실패!");
-                return;
-            }
-        }
-
-        try {
-            fileReader = new FileReader(file);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-            System.out.println("파일 불러오기 실패!");
-            return;
-        }
-
-        try (BufferedReader buffRead = new BufferedReader(fileReader)) {
-            String line;
-            String addWord;
-            while((line = buffRead.readLine()) != null) {
-                addWord = line + "\n";
-                WordList.addWord(addWord);
-            }
-            fileReader.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-            System.out.println("파일 읽어오기 실패!");
-            return;
-        }
+//        if(!file.exists()) {
+//            try {
+//                file.createNewFile();
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//                System.out.println("파일 생성 실패!");
+//                return;
+//            }
+//        }
+//
+//        try {
+//            fileReader = new FileReader(file);
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//            System.out.println("파일 불러오기 실패!");
+//            return;
+//        }
+//
+//        try (BufferedReader buffRead = new BufferedReader(fileReader)) {
+//            String line;
+//            String addWord;
+//            while((line = buffRead.readLine()) != null) {
+//                addWord = line + "\n";
+//                WordRepository.addWord(addWord);
+//            }
+//            fileReader.close();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//            System.out.println("파일 읽어오기 실패!");
+//            return;
+//        }
 
         System.out.println("단어를 추가합니다. 0을 입력시 종료");
         while(true) {
@@ -54,7 +55,7 @@ public class PlusWord {
                 System.out.println("단어 추가를 중지합니다.");
                 break;
             }
-            if(WordList.wordEqualCheck(word)) {
+            if(WordRepository.wordEqualCheck(word)) {
                 System.out.printf("%s는 이미 들어가있는 단어입니다.\n", word);
                 continue;
             }
@@ -63,12 +64,11 @@ public class PlusWord {
                 System.out.println("단어 추가를 중지합니다.");
                 break;
             }
-            word = word + " " + wordMean + "\n";
-            WordList.addWord(word);
+            WordRepository.addWord(word, wordMean);
         }
 
         try (FileWriter fileWriter = new FileWriter(file)) {
-            String wordList = WordList.exportWordList();
+            String wordList = WordRepository.exportWordList();
             fileWriter.write(wordList);
             fileWriter.flush();
         } catch (IOException e) {

@@ -1,5 +1,7 @@
 package VocaMain;
 
+import word.WordRepository;
+
 import java.io.*;
 
 public class VocaFile {
@@ -11,8 +13,11 @@ public class VocaFile {
             if (file.createNewFile()) {
                 System.out.println("파일 생성 성공");
                 System.out.println("경로 : " + file.getAbsolutePath());
+                FileWrite();
+                new WordRepository();
             } else {
                 System.out.println("파일이 이미 있습니다.");
+                loadFile();
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -45,13 +50,20 @@ public class VocaFile {
 
         //파일 로드
     public void loadFile() {
-        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
-            String line;
-            while ((line = reader.readLine()) != null) {
-                System.out.println(line);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        new WordRepository();
+//        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+//            String line;
+//            while ((line = reader.readLine()) != null) {
+//                System.out.println(line);
+//            }
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+    }
+
+//    단어목록 가져오기
+    public void ReadWordList() {
+        String wordList = WordRepository.exportWordList();
+        System.out.println(wordList);
     }
 }

@@ -12,12 +12,10 @@ import java.io.IOException;
 
 
 public class QuizView {
-    private final Utility utilTool;
-    private final WordRepository wr;
+//    private final WordRepository wr;
 
     public QuizView() throws IOException {
-        this.utilTool = new Utility();
-        this.wr=new WordRepository();
+//        this.wr=new WordRepository();
         viewProcess();
 
     }
@@ -33,14 +31,14 @@ public class QuizView {
     void viewProcess() {
         while (true) {
             mainView();
-            String menuNum = utilTool.input(">>");
+            String menuNum = Utility.input(">>");
 
             switch (menuNum) {
                 case "1":
-                    new MutiQuizView(wr);
+                    new MutiQuizView();
                     break;
                 case "2":
-                    new SubQuizRun(wr.word,wr.wordMeaning);
+                    new SubQuizRun(WordRepository.word,WordRepository.wordMeaning);
                     break;
                 case "3":
                     System.out.println("퀴즈를 종료합니다.");

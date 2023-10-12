@@ -29,8 +29,9 @@ public class VocaView {
 
             switch (menuNum) {
                 case "1":
-                    vocaFile.FileWrite(); //1번 선택시 txt파일에 단어 자동 저장 하기
-                    vocaFile.loadFile(); //1번 선택시 txt파일에 있는 단어 불러오기
+//                  vocaFile.FileWrite(); //1번 선택시 txt파일에 단어 자동 저장 하기
+//                  vocaFile.loadFile(); //1번 선택시 txt파일에 있는 단어 불러오기
+                    vocaFile.ReadWordList();
                     break;
                 case "2":
                     new quizMain();

@@ -7,13 +7,13 @@ public class MutiQuizView {
 
 
 
-    public MutiQuizView(WordRepository wr) {
-        QuizView(wr);
+    public MutiQuizView() {
+        QuizView();
     }
 
-    void QuizView(WordRepository wr) {
-        for (int i = 0; i < wr.word.size(); i++) {
-            wr.ShowMutiQuiz();
+    void QuizView() {
+        for (int i = 0; i < WordRepository.word.size(); i++) {
+            WordRepository.ShowMutiQuiz();
         }
     }
 }

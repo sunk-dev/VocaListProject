@@ -9,8 +9,9 @@ import utility.Utility;
 public class WordRepository {
 
 //    public static Map<String, String> wordList;
-    public ArrayList<String> word;
-    public ArrayList<String> wordMeaning;
+    public static ArrayList<String> word;
+    public static ArrayList<String> wordMeaning;
+    public static ArrayList<String> wordList = new ArrayList<>();
 
     public WordRepository() {
         this.word = new ArrayList<>();
@@ -21,6 +22,7 @@ public class WordRepository {
             BufferedReader br = new BufferedReader(new FileReader(wordFile));
             String str = br.readLine();
             while(str != null){ // 읽어오는 문자열이 null이 나올때까지 루프
+                wordList.add(str);
                 String[]words=str.split(" "); // 기존에 /였던 기준을 띄어쓰기로 수정
                 word.add(words[0]);
                 wordMeaning.add(words[1]);
@@ -30,7 +32,6 @@ public class WordRepository {
             e.printStackTrace();
 
         }
-
 
     }
 
@@ -43,7 +44,7 @@ public class WordRepository {
      * 
      */
 
-    public void  ShowMutiQuiz() {
+    public static void  ShowMutiQuiz() {
         
         Random r =new Random();
         
@@ -86,7 +87,7 @@ public class WordRepository {
      * @param correctWordIndex
      * @return
      */
-    ArrayList<String> PickChoices(int correctWordIndex,int MAXWORDCOUNT){
+    static ArrayList<String> PickChoices(int correctWordIndex, int MAXWORDCOUNT){
         Random r = new Random();
         ArrayList<String> OptionWordList= new ArrayList<>();
         while(OptionWordList.size()!=3){
@@ -105,6 +106,46 @@ public class WordRepository {
         return String.format("");
 
     }
+    /**
+     * addWord
+     * 단어장에 단어를 추가하는 메서드
+     * @param w - 추가하려는 단어
+     * @param wordMean - 추가하려는 단어의 의미
+     */
+    public static void addWord(String w, String wordMean) {
+        String putWord = w + " " + wordMean;
+        word.add(w);
+        wordMeaning.add(wordMean);
+        wordList.add(putWord);
+    }
 
+    /**
+     * exportWordList
+     * 단어장에 저장된 단어와 뜻 리스트를 내보내는 메서드
+     * @return word : ArrayList를 String 형태로 저장해서 보내준다.
+     *
+     */
+    public static String exportWordList() {
+        String word = "";
+        for (String s : wordList) {
+            word = word + s + "\n";
+        }
+        return word;
+    }
+
+    /**
+     wordEqaulCheck
+     추가하려는 단어가 이미 단어장에 들어가있는지 확인하는 메서드
+     @param addWord - 추가하려는 단어
+     @return     true : 단어장에 해당 단어가 있음
+     false : 단어장에 해당 단어가 없음
+     */
+    public static boolean wordEqualCheck(String addWord) {
+        for (String w : word) {
+            if(addWord.equals(w))
+                return true;
+        }
+        return false;
+    }
 
 }
