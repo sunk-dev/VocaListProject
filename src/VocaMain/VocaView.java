@@ -1,6 +1,6 @@
 package VocaMain;
 
-import MinGeon.main;
+import MinGeon.PlusWord;
 import quiz.*;
 import utility.Utility;
 
@@ -36,7 +36,7 @@ public class VocaView {
                     new quizMain();
                     break;
                 case "3":
-                    new main();
+                    new PlusWord();
                     break;
                 case "4":
                     System.out.println("수고하셨습니다!👍");
