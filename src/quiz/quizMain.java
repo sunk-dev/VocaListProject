@@ -2,8 +2,8 @@ package quiz;
 
 import java.io.IOException;
 
-public class Main {
-    public Main() {
+public class quizMain {
+    public quizMain() {
         try {
             new QuizView();
         } catch (IOException e) {

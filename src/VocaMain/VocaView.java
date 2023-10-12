@@ -1,10 +1,8 @@
 package VocaMain;
 
-import java.util.Map;
-
 import static VocaMain.Utility.input;
 import static VocaMain.Utility.makeLine;
-import static VocaMain.VocaFile.*;
+import MinGeon.main;
 import quiz.*;
 
 
@@ -37,9 +35,10 @@ public class VocaView {
                     vocaFile.loadFile(); //1번 선택시 txt파일에 있는 단어 불러오기
                     break;
                 case "2":
-                    new Main();
+                    new quizMain();
                     break;
                 case "3":
+                    new main();
                     break;
                 case "4":
                     System.out.println("수고하셨습니다!👍");
