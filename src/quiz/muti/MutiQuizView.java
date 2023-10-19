@@ -12,8 +12,8 @@ public class MutiQuizView {
     }
 
     void QuizView(WordRepository wr) {
-        for (int i = 0; i < wr.word.size(); i++) {
-            wr.ShowMutiQuiz();
-        }
+
+        wr.ShowMutiQuiz();
+
     }
 }
