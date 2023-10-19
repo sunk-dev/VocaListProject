@@ -1,5 +1,6 @@
 package quiz;
 
+import VocaMain.VocaView;
 import word.WordRepository;
 
 import quiz.muti.*;
@@ -27,6 +28,7 @@ public class QuizView {
         System.out.println("퀴즈 모드를 선택해 주세요!");
         System.out.println("1. 객관식 퀴즈");
         System.out.println("2. 주관식 퀴즈");
+        System.out.println("3. 퀴즈 나가기");
         System.out.println("★☆★☆★☆★☆★☆★☆★☆★☆");
     }
 
@@ -41,6 +43,9 @@ public class QuizView {
                     break;
                 case "2":
                     new SubQuizRun(wr.word,wr.wordMeaning);
+                    break;
+                case "3":
+                    VocaView.start();
                     break;
             }
         }
