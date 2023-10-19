@@ -9,13 +9,15 @@ import quiz.sub.*;
 
 import java.io.IOException;
 
+import static utility.Utility.input;
+
 
 public class QuizView {
-    private final tools utilTool;
+    //private final tools utilTool;
     private final WordRepository wr;
 
     public QuizView() throws IOException {
-        this.utilTool = new tools();
+        //this.utilTool = new tools();
         this.wr=new WordRepository();
         viewProcess();
 
@@ -31,7 +33,7 @@ public class QuizView {
     void viewProcess() {
         while (true) {
             mainView();
-            String menuNum = utilTool.input(">>");
+            String menuNum =input(">>");
 
             switch (menuNum) {
                 case "1":

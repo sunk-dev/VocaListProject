@@ -3,6 +3,7 @@ package word;
 import java.io.*;
 import java.util.*;
 
+import quiz.QuizView;
 import utility.Utility;
 
 
@@ -51,6 +52,8 @@ public class WordRepository {
         final int MAXWORDCOUNT=word.size(); //변하지 않는 함수니 final을 추가함
         ArrayList<Integer> submittedList=new ArrayList<>();
 
+        int QuizNum=1;
+
         while (submittedList.size()!=word.size()){
             int correctWordIndex=r.nextInt(MAXWORDCOUNT);
             if(submittedList.contains(correctWordIndex)){
@@ -70,7 +73,7 @@ public class WordRepository {
 
 
                 System.out.println("★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆");
-                System.out.println("\t\t"+correctWordFare.get("word"));
+                System.out.println("\t\t"+ QuizNum+"번"+correctWordFare.get("word"));
                 System.out.println("★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆");
                 for (int i = 0; i <OptionsList.size() ; i++) {
                     System.out.println((i+1)+"번 "+OptionsList.get(i));
@@ -100,6 +103,7 @@ public class WordRepository {
                 }
 
             }
+            QuizNum++;
 
 
         }
