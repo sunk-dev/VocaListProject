@@ -1,21 +1,28 @@
 package VocaMain;
 
+import word.WordRepository;
+
 import java.io.*;
 
 public class VocaFile {
     // txt 파일 생성
-    File file = new File("D:/Voca" + "/Vocabulary.txt");
+    File file = new File("WordList.txt");
 
     public VocaFile() {
         try {
-            if (file.getParentFile().mkdirs() && file.createNewFile()) {
-                System.out.println("파일 생성 성공: " + file.getAbsolutePath());
+            if (file.createNewFile()) {
+                System.out.println("파일 생성 성공");
+                System.out.println("경로 : " + file.getAbsolutePath());
+                FileWrite();
             } else {
-                System.out.println("파일이 이미 있습니다.");
+//              System.out.println("파일이 이미 있습니다."); //기존 메세지
+                System.out.println("파일을 불러옵니다.");
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        new WordRepository();
     }
 
     //파일 초기 데이터 쓰기
@@ -43,14 +50,21 @@ public class VocaFile {
 
 
         //파일 로드
-    public void loadFile() {
-        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
-            String line;
-            while ((line = reader.readLine()) != null) {
-                System.out.println(line);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//    public void loadFile() {
+//        new WordRepository();
+//        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+//            String line;
+//            while ((line = reader.readLine()) != null) {
+//                System.out.println(line);
+//            }
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//    }
+
+//    단어목록 가져오기
+    public void ReadWordList() {
+        String wordList = WordRepository.exportWordList();
+        System.out.println(wordList);
     }
 }

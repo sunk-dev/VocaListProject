@@ -1,10 +1,8 @@
 package VocaMain;
 
-import static VocaMain.Utility.input;
-import static VocaMain.Utility.makeLine;
-import MinGeon.main;
+import MinGeon.PlusWord;
 import quiz.*;
-
+import utility.Utility;
 
 
 public class VocaView {
@@ -25,20 +23,21 @@ public class VocaView {
             System.out.println("#3. 새로운 단어 추가!🧠");
             System.out.println("#4. Voca 프로그램 종료🙌");
 
-            makeLine();
+            Utility.makeLine();
 
-            String menuNum = input(">>");
+            String menuNum = Utility.input(">>");
 
             switch (menuNum) {
                 case "1":
-                    vocaFile.FileWrite(); //1번 선택시 txt파일에 단어 자동 저장 하기
-                    vocaFile.loadFile(); //1번 선택시 txt파일에 있는 단어 불러오기
+//                  vocaFile.FileWrite(); //1번 선택시 txt파일에 단어 자동 저장 하기
+//                  vocaFile.loadFile(); //1번 선택시 txt파일에 있는 단어 불러오기
+                    vocaFile.ReadWordList();
                     break;
                 case "2":
                     new quizMain();
                     break;
                 case "3":
-                    new main();
+                    new PlusWord();
                     break;
                 case "4":
                     System.out.println("수고하셨습니다!👍");
