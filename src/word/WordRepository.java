@@ -46,35 +46,71 @@ public class WordRepository {
     public void  ShowMutiQuiz() {
         
         Random r =new Random();
+        ArrayList<Integer> submittedWordList=new ArrayList<>();
         
         int MAXWORDCOUNT=word.size();
-        int correctWordIndex=r.nextInt(MAXWORDCOUNT);
-        
-        HashMap<String,String> correctWordFare = new HashMap<>();
-        
-        correctWordFare.put("word",word.get(correctWordIndex)); //값 추가
-        correctWordFare.put("meaning",wordMeaning.get(correctWordIndex));
-        
-        ArrayList<String> OptionsList = PickChoices(correctWordIndex, MAXWORDCOUNT);
-        OptionsList.add(correctWordFare.get("meaning"));
-        //보기 무작위 섞기
-        Collections.shuffle(OptionsList);
+        int Quiznum=1;
+        while(submittedWordList.size()!=15){
+
+            int correctWordIndex=r.nextInt(MAXWORDCOUNT);
+            if (submittedWordList.contains(correctWordIndex)){
+                continue;
+            }
+            else{
+                submittedWordList.add(correctWordIndex);
+                HashMap<String,String> correctWordFare = new HashMap<>();
+                correctWordFare.put("word",word.get(correctWordIndex)); //값 추가
+                correctWordFare.put("meaning",wordMeaning.get(correctWordIndex));
+                ArrayList<String> OptionsList = PickChoices(correctWordIndex, MAXWORDCOUNT);
+                OptionsList.add(correctWordFare.get("meaning"));
+                //보기 무작위 섞기
+                Collections.shuffle(OptionsList);
 
 
-        System.out.println("★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆");
-        System.out.println("\t\t"+correctWordFare.get("word"));
-        System.out.println("★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆");
-        for (int i = 0; i <OptionsList.size() ; i++) {
-            System.out.println((i+1)+"번 "+OptionsList.get(i));
-            System.out.println();
+
+                System.out.println("★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆");
+                System.out.println("\t\t"+Quiznum+"번:"+correctWordFare.get("word"));
+                System.out.println("★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆");
+                for (int i = 0; i <OptionsList.size() ; i++) {
+                    System.out.println((i+1)+"번 "+OptionsList.get(i));
+                    System.out.println();
+                }
+                int userAnswerNum=-1;
+                String userAnswer="";
+
+                while (true){
+                    try{
+                        userAnswerNum= Integer.parseInt(tools.input(">>"));
+                        userAnswer = OptionsList.get(userAnswerNum - 1);
+
+                    }catch (Exception e){
+                        System.out.println("보기에 있는 값을 입력해주세요!");
+                        continue;
+
+                    }
+                    break;
+
+                }
+
+
+                
+
+                if(correctWordFare.get("meaning").equals(userAnswer)){
+                    System.out.println("정답입니다!");
+                }else{
+                    System.out.println("틀렸습니다. 정답은 >>"+correctWordFare.get("meaning"));
+                }
+
+
+
+
+            }
+            Quiznum++;
+
         }
-        int userAnswerNum= Integer.parseInt(tools.input(">>"));
-        String userAnswer=OptionsList.get(userAnswerNum-1);
-        if(correctWordFare.get("meaning").equals(userAnswer)){
-            System.out.println("정답입니다!");
-        }else{
-            System.out.println("틀렸습니다. 정답은 >>"+correctWordFare.get("meaning"));
-        }
+
+
+
 
 
 
