@@ -54,6 +54,8 @@ public class WordRepository {
 
         int QuizNum=1;
 
+        System.out.println("총"+MAXWORDCOUNT+"개의 문제가 출제됩니다!");
+
         while (submittedList.size()!=word.size()){
             int correctWordIndex=r.nextInt(MAXWORDCOUNT);
             if(submittedList.contains(correctWordIndex)){
