@@ -55,6 +55,7 @@ public class WordRepository {
         int QuizNum=1;
 
         System.out.println("총"+MAXWORDCOUNT+"개의 문제가 출제됩니다!");
+        System.out.println("중간에 그만하고 싶으면 0을 입력하세요!!");
 
         while (submittedList.size()!=word.size()){
             int correctWordIndex=r.nextInt(MAXWORDCOUNT);
@@ -87,6 +88,9 @@ public class WordRepository {
                 while (true){
                     try{
                         userAnswerNum=Integer.parseInt(Utility.input(">>"));
+                        if(userAnswerNum==0){
+                            return;
+                        }
                         userAnswer=OptionsList.get(userAnswerNum-1);
 
                     }catch (Exception e){
