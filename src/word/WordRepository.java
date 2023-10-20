@@ -87,7 +87,7 @@ public class WordRepository {
 
                 while (true){
                     try{
-                        userAnswerNum=Integer.parseInt(Utility.input(">>"));
+                        userAnswerNum=Integer.parseInt(Utility.input(">>(그만하기:0)"));
                         if(userAnswerNum==0){
                             return;
                         }
