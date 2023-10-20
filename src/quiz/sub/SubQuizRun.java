@@ -1,5 +1,8 @@
 package quiz.sub;
 
+import quiz.QuizView;
+import quiz.quizMain;
+
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
@@ -38,12 +41,16 @@ public class SubQuizRun {
             System.out.println("문제 " + (i + 1) + ":");
             System.out.println("단어 '" + question + "'의 뜻은 무엇일까요?");
 
-            System.out.print("정답을 입력하세요: ");
+            System.out.print("정답을 입력하세요(나가기는 0입력): ");
             String userAnswer = scanner.nextLine();
 
             if (userAnswer.equalsIgnoreCase(correctAnswer)) {
                 System.out.println("정답입니다!");
-            } else {
+            }else if(userAnswer.equals("0")){
+                System.out.println("퀴즈를 종료합니다");
+                new quizMain();
+
+            }else {
                 System.out.println("틀렸습니다. 정답은 '" + correctAnswer + "' 입니다.");
             }
         }
